@@ -9,7 +9,7 @@ Thank you [Sameeha Rahman](https://www.kaggle.com/sameeharahman/preprocessed-sna
 I apologize in advance for all the typos in the demo. They will be fixed when I retrain the model. 
 # Result
 Training 6 types (about 5500 pictures) yields 87% accuracy
-![Accuracy](https://github.com/Hanh-hub/Texas-Snake-classifier-with-ResNet-18-CNN-machine-learning/blob/main/accuracy%20log.PNG)
+![Accuracy](https://github.com/Vikramkumarx/snake-bite-prediction/blob/main/accuracy%20log.PNG)
 ![Confustion matrix](https://github.com/Hanh-hub/Texas-Snake-classifier-with-ResNet-18-CNN-machine-learning/blob/main/confusion%20matrix.png)
 
 As we trained more classes, there are more misclassifications between species, and the accuracy is thus reduced. 
