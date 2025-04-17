@@ -1,4 +1,4 @@
-# Texas-Snake-classifier-with-ResNet-18-CNN-machine-learning
+# Snake Bite Prediction-with-ResNet-18-CNN-machine-learning
 Identify snakes using machine learning. Snakes have been framed as the devil throughout our culture and history. Studie suggests that the fear of snakes is hardwired as a part of our evolution. People can get scared over a harmless dekay brown snakes thinking it will bite and kill them. Many people kill rat snakes or harmless water snakes because they misclassify them as the deadly "water moccasin" snake.  Without snakes, the number of prey species would increase to unnatural levels and destroy the stability of the ecosystem. Similarly, if a large number of snakes are killed, the predators that eat snakes will struggle to find food. Snakes are thus an important component of the natural environment. 
 # Special Thanks 
 
@@ -20,3 +20,4 @@ Training 2000 pictures of rattlesnakes and harmless water snakes give 97% accura
 ![Testing result - dekay brown snake ](https://github.com/Vikramkumarx/snake-bite-prediction/blob/main/Testing%20result%202.PNG)
 ![Testing result - rattle snake ](https://github.com/Vikramkumarx/snake-bite-prediction/blob/main/Testing%20result%203.PNG)
 ![Testing result - cottonmouth ](https://github.com/Vikramkumarx/snake-bite-prediction/blob/main/Testing%20result%204.PNG)
+By Vikramkumarx
