@@ -14,7 +14,7 @@ Training 6 types (about 5500 pictures) yields 87% accuracy
 
 As we trained more classes, there are more misclassifications between species, and the accuracy is thus reduced. 
 Training 2000 pictures of rattlesnakes and harmless water snakes give 97% accuracy. 
-![Accuracy when there are only two classes ](https://github.com/Hanh-hub/Texas-Snake-classifier-with-ResNet-18-CNN-machine-learning/blob/main/accuracy%20log%202%20classes.PNG)
+![Accuracy when there are only two classes ](https://github.com/Vikramkumarx/snake-bite-prediction/blob/main/accuracy%20log%202%20classes.PNG)
 
 
 ![Testing results -black rat snake](https://github.com/Vikramkumarx/snake-bite-prediction/blob/main/Testing%20result%201.PNG)
