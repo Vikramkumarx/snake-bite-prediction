@@ -18,6 +18,6 @@ Training 2000 pictures of rattlesnakes and harmless water snakes give 97% accura
 
 
 ![Testing results -black rat snake](https://github.com/Vikramkumarx/snake-bite-prediction/blob/main/Testing%20result%201.PNG)
-![Testing result - dekay brown snake ](https://github.com/Hanh-hub/Texas-Snake-classifier-with-ResNet-18-CNN-machine-learning/blob/main/Testing%20result%202.PNG)
+![Testing result - dekay brown snake ](https://github.com/Vikramkumarx/snake-bite-prediction/blob/main/Testing%20result%202.PNG)
 ![Testing result - rattle snake ](https://github.com/Hanh-hub/Texas-Snake-classifier-with-ResNet-18-CNN-machine-learning/blob/main/Testing%20result%203.PNG)
 ![Testing result - cottonmouth ](https://github.com/Hanh-hub/Texas-Snake-classifier-with-ResNet-18-CNN-machine-learning/blob/main/Testing%20result%204.PNG)
