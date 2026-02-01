@@ -1,130 +1,121 @@
----
-title: Snake Bite Prediction System
-emoji: 🐍
-colorFrom: green
-colorTo: emerald
-sdk: docker
-pinned: false
-license: mit
----
+# 🐍 AI Snake Bite Prediction System
 
-# 🐍 Snake Bite Prediction System
+[![Generic badge](https://img.shields.io/badge/Status-Production%20Ready-success.svg)](https://shields.io/)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-Framework-lightgrey.svg)](https://flask.palletsprojects.com/)
+[![Deep Learning](https://img.shields.io/badge/AI-Deep%20Learning-orange.svg)](https://fast.ai/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**AI-Powered Snake Species Identification using Deep Learning**
-
-Live Demo: [Try it now!](https://huggingface.co/spaces/YOUR_USERNAME/snake-bite-prediction)
+**An Advanced AI-Powered Web Application to Identify Snake Species from Images.**
+*Helping save lives through rapid identification and educational resources.*
 
 ---
 
-## 🚀 Features
+## 🌟 Major Features (Next Level)
 
-### **Core Features:**
-- 🤖 AI-Powered Snake Identification
-- 🐍 4 Snake Species Database
-- 📊 Confidence Scoring
-- ⚠️ Venomous/Harmless Classification
-- 📸 Image Upload (Drag & Drop)
-- 📜 Scan History
+This project has been upgraded with production-grade features:
 
-### **Advanced Features:**
-- 🎨 Dark/Light Mode Toggle
-- 📥 Download PDF Reports
-- 📤 Share Results
-- 🔊 Text-to-Speech
-- 📊 Statistics Dashboard
-- 🆘 Emergency Contact Page
-- 🎯 Interactive Quiz
+### 🎨 **UI & Experience**
+- **Dark/Light Mode Toggle**: System that saves user preference.
+- **Modern Glassmorphism Design**: Beautiful, responsive interface.
+- **Voice Results**: Text-to-Speech reads out the identification results.
 
-### **Educational Features:**
-- 📚 Species Information
-- 🚨 Safety Guidelines
-- 🚑 First Aid Instructions
-- 🎮 Snake Facts Quiz
-- 📞 Emergency Protocols
+### 🚀 **Functionality**
+- **AI Identification**: Instantly identifies 4 snake species with confidence scores.
+- **PDF Reports**: Generate and download professional medical scanning reports.
+- **Social Sharing**: Share results via social media or clipboard.
+- **Smart Analytics**: Dashboard showing scan history and species distribution.
+
+### 📚 **Education & Safety**
+- **Emergency Mode**: One-click access to 911, Poison Control, and First Aid steps.
+- **Interactive Quiz**: Test your snake knowledge with a gamified quiz.
+- **Species Database**: Detailed info on habitats, venom status, and identifiers.
 
 ---
 
 ## 🐍 Supported Species
 
-1. **Northern Cottonmouth** (Venomous - High Risk)
-2. **Texas Coral Snake** (Venomous - Extreme Risk)
-3. **Plain Bellied Water Snake** (Harmless)
-4. **Louisiana Milk Snake** (Harmless)
+The model currently supports the identification of:
+
+| Species | Scientist Name | Type | Danger Level |
+|---------|----------------|------|--------------|
+| **Northern Cottonmouth** | *Agkistrodon piscivorus* | Venomous | 🔴 High |
+| **Texas Coral Snake** | *Micrurus tener* | Venomous | 🔴 Extreme |
+| **Plain Bellied Water Snake** | *Nerodia erythrogaster* | Non-Venomous | 🟢 Harmless |
+| **Louisiana Milk Snake** | *Lampropeltis triangulum* | Non-Venomous | 🟢 Harmless |
 
 ---
 
-## 🎯 How to Use
+## 📸 Demo & Screenshots
 
-1. **Upload Image**: Click or drag & drop a snake image
-2. **Get Prediction**: AI identifies the species instantly
-3. **View Details**: See scientific name, habitat, first aid
-4. **Take Action**: Download PDF, share, or listen to results
+*(Add screenshots of your app here)*
 
----
+### Dashboard & Statistics
+Real-time analytics of scanned snakes.
 
-## 🛠️ Technology Stack
-
-- **Backend**: Python, Flask
-- **Frontend**: HTML5, CSS3, JavaScript
-- **AI/ML**: FastAI, PyTorch, ResNet34
-- **Features**: Web Speech API, Share API, LocalStorage
+### Emergency Response
+Critical information available when it matters most.
 
 ---
 
-## ⚠️ Disclaimer
+## 🛠️ Installation & Setup
 
-This application is for **educational purposes only**. 
+### Prerequisites
+- Python 3.8 or higher
+- Git
 
-**In case of actual snake bite:**
-- Call 911 immediately
-- Do NOT rely solely on AI identification
-- Seek professional medical treatment
-- Time is critical in snake bite emergencies
+### Steps
 
----
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Vikramkumarx/snake-bite-prediction.git
+   cd snake-bite-prediction
+   ```
 
-## 📊 Project Stats
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- **Pages**: 7
-- **Features**: 20+
-- **Demo Images**: 13
-- **Snake Species**: 4
-- **Quiz Questions**: 10
-- **Lines of Code**: 3000+
+3. **Run the Application**
+   ```bash
+   python app.py
+   ```
 
----
-
-## 🎓 Educational Purpose
-
-This project demonstrates:
-- Deep Learning for image classification
-- Full-stack web development
-- Modern UI/UX design
-- Real-world problem solving
-- Production-ready code structure
+4. **Access the App**
+   Open your browser and visit: `http://localhost:5001`
 
 ---
 
-## 📝 License
+## 📁 Project Structure
 
-MIT License - Feel free to use for educational purposes
-
----
-
-## 👨‍💻 Developer
-
-Built with ❤️ using Deep Learning + Modern Web Technologies
-
-**Made for educational demonstration**
-
----
-
-## 🔗 Links
-
-- [GitHub Repository](https://github.com/YOUR_USERNAME/snake-bite-prediction)
-- [Documentation](./NEXT_LEVEL_FEATURES.md)
-- [Demo Guide](./QUICK_DEMO_GUIDE.md)
+```
+snake-bite-prediction/
+├── app.py                 # Main Flask Application
+├── model/                 # AI Model files
+├── templates/             # HTML Templates
+│   ├── index.html         # Home & Scanner
+│   ├── statistics.html    # Analytics Dashboard
+│   ├── emergency.html     # SOS & First Aid
+│   ├── quiz.html          # Educational Quiz
+│   └── ...
+├── static/                # CSS, JS, Images
+├── demo_images/           # Test Images for Demo
+└── requirements.txt       # Python Dependencies
+```
 
 ---
 
-**⚡ Try it now and identify snakes with AI!**
+## 🤝 Contribution
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+<p align="center">
+  <b>Made with ❤️ using FastAI & Flask</b>
+</p>
