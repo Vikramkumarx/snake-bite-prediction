@@ -66,6 +66,8 @@ This project has been upgraded with production-grade features:
 
 ### 📚 **Education & Safety**
 - **Emergency Mode**: One-click access to 911, Poison Control, and First Aid steps.
+- **Nearby Hospitals**: Automatic Google Maps locator for finding the nearest medical center.
+- **Venom Prevention Guide**: Step-by-step instructions on immobilizing limbs to stop venom spread.
 - **Interactive Quiz**: Test your snake knowledge with a gamified quiz.
 - **Species Database**: Detailed info on habitats, venom status, and identifiers.
 
