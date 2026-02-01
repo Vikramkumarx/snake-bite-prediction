@@ -9,7 +9,7 @@
 **An Advanced AI-Powered Web Application to Identify Snake Species from Images.**
 *Helping save lives through rapid identification and educational resources.*
 
-# 🚀 Use Live App: [Click Here to Open Snake Prediction System](https://huggingface.co/spaces/DeSeRtSoUl/Snake-prediction)
+[![Live Demo](https://img.shields.io/badge/🚀%20Live-Demo-brightgreen?style=for-the-badge&logo=huggingface)](https://huggingface.co/spaces/DeSeRtSoUl/Snake-prediction)
 
 ---
 
