@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Quiz - Snake Scouter AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav a:hover {
+            background: rgba(16, 185, 129, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question-number {
+            color: #10b981;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .option:hover {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
+            transform: translateX(10px);
+        }
+
+        .option.selected {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .option.correct {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .option.incorrect {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .option-letter {
+            width: 40px;
+            height: 40px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .result {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .score {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .score.excellent {
+            color: #10b981;
+        }
+
+        .score.good {
+            color: #3b82f6;
+        }
+
+        .score.fair {
+            color: #f59e0b;
+        }
+
+        .score.poor {
+            color: #ef4444;
+        }
+
+        .restart-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .restart-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            transition: width 0.3s;
+        }
+
+        .fact-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .fact-box.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Snake Knowledge Quiz</h1>
+            <p style="color: #94a3b8; margin-top: 10px;">Test your snake identification skills!</p>
+            <div class="nav">
+                <a href="/">🏠 Home</a>
+                <a href="/species">📚 Species</a>
+                <a href="/safety">🚨 Safety</a>
+                <a href="/statistics">📊 Statistics</a>
+                <a href="/emergency">🆘 Emergency</a>
+                <a href="/quiz">🎯 Quiz</a>
+                <a href="/about">ℹ️ About</a>
+            </div>
+        </header>
+
+        <div class="quiz-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+            </div>
+
+            <div id="quizContent">
+                <!-- Questions will be loaded here -->
+            </div>
+
+            <div class="result" id="result">
+                <h2 style="color: #10b981; font-size: 2rem;">Quiz Complete!</h2>
+                <div class="score" id="scoreDisplay">0/0</div>
+                <p id="scoreMessage" style="font-size: 1.3rem; margin: 20px 0;"></p>
+                <button class="restart-btn" onclick="restartQuiz()">🔄 Try Again</button>
+                <a href="/"
+                    style="display: inline-block; margin-left: 15px; padding: 15px 40px; background: #10b981; color: white; text-decoration: none; border-radius: 15px; font-weight: bold;">🏠
+                    Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "Which snake has the distinctive 'Red on yellow, kill a fellow' pattern?",
+                options: ["Northern Cottonmouth", "Texas Coral Snake", "Louisiana Milk Snake", "Plain Bellied Water Snake"],
+                correct: 1,
+                fact: "The Texas Coral Snake has red, yellow, and black bands. The rhyme 'Red on yellow, kill a fellow' helps distinguish it from the harmless Milk Snake."
+            },
+            {
+                question: "Which of these snakes is completely harmless to humans?",
+                options: ["Texas Coral Snake", "Northern Cottonmouth", "Plain Bellied Water Snake", "All are venomous"],
+                correct: 2,
+                fact: "The Plain Bellied Water Snake is non-venomous and harmless, though often mistaken for the venomous Cottonmouth."
+            },
+            {
+                question: "What is another name for the Northern Cottonmouth?",
+                options: ["Copperhead", "Water Moccasin", "Rattlesnake", "King Snake"],
+                correct: 1,
+                fact: "The Northern Cottonmouth is also known as the Water Moccasin, named for its semi-aquatic lifestyle."
+            },
+            {
+                question: "Which snake mimics the Coral Snake's appearance but is harmless?",
+                options: ["Louisiana Milk Snake", "Plain Bellied Water Snake", "Northern Cottonmouth", "None of these"],
+                correct: 0,
+                fact: "The Louisiana Milk Snake mimics the Coral Snake's banded pattern but is completely harmless. Remember: 'Red on black, friend of Jack.'"
+            },
+            {
+                question: "What should you do FIRST if bitten by a snake?",
+                options: ["Apply ice", "Call 911", "Try to catch the snake", "Cut the wound"],
+                correct: 1,
+                fact: "Always call 911 immediately! Time is critical in snake bite emergencies. Never try to treat it yourself."
+            },
+            {
+                question: "Which snake has neurotoxic venom that affects the nervous system?",
+                options: ["Plain Bellied Water Snake", "Louisiana Milk Snake", "Texas Coral Snake", "None of these"],
+                correct: 2,
+                fact: "The Texas Coral Snake has potent neurotoxic venom that affects the nervous system, making it extremely dangerous."
+            },
+            {
+                question: "What is the danger level of the Northern Cottonmouth?",
+                options: ["Low", "Medium", "High", "Extreme"],
+                correct: 2,
+                fact: "The Northern Cottonmouth is classified as 'High' danger level due to its venomous bite and aggressive defensive behavior."
+            },
+            {
+                question: "Where would you most likely find a Plain Bellied Water Snake?",
+                options: ["Desert", "Mountains", "Rivers and ponds", "Urban areas"],
+                correct: 2,
+                fact: "Plain Bellied Water Snakes are found near water bodies like rivers, lakes, and ponds where they hunt for fish."
+            },
+            {
+                question: "What should you NOT do if bitten by a snake?",
+                options: ["Keep calm", "Apply tourniquet", "Call 911", "Remove jewelry"],
+                correct: 1,
+                fact: "Never apply a tourniquet! It can cause more harm. Keep calm, call 911, and keep the bite below heart level."
+            },
+            {
+                question: "Which snake is beneficial for pest control?",
+                options: ["Texas Coral Snake", "Northern Cottonmouth", "Louisiana Milk Snake", "All snakes"],
+                correct: 2,
+                fact: "The Louisiana Milk Snake is beneficial for pest control as it eats rodents and other small pests."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answers = [];
+
+        function loadQuestion() {
+            const question = quizData[currentQuestion];
+            const quizContent = document.getElementById('quizContent');
+
+            quizContent.innerHTML = `
+                <div class="question">
+                    <div class="question-number">Question ${currentQuestion + 1} of ${quizData.length}</div>
+                    <div class="question-text">${question.question}</div>
+                    <div class="options">
+                        ${question.options.map((option, index) => `
+                            <div class="option" onclick="selectOption(${index})">
+                                <div class="option-letter">${String.fromCharCode(65 + index)}</div>
+                                <div>${option}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="fact-box" id="factBox">
+                        <strong style="color: #10b981;">💡 Did you know?</strong>
+                        <p style="margin-top: 10px;">${question.fact}</p>
+                    </div>
+                </div>
+                <button class="submit-btn" id="submitBtn" onclick="submitAnswer()" disabled>
+                    ${currentQuestion < quizData.length - 1 ? 'Next Question →' : 'Finish Quiz 🎉'}
+                </button>
+            `;
+
+            updateProgress();
+        }
+
+        function selectOption(index) {
+            const options = document.querySelectorAll('.option');
+            options.forEach((opt, i) => {
+                opt.classList.remove('selected');
+                if (i === index) {
+                    opt.classList.add('selected');
+                }
+            });
+
+            answers[currentQuestion] = index;
+            document.getElementById('submitBtn').disabled = false;
+        }
+
+        function submitAnswer() {
+            const question = quizData[currentQuestion];
+            const selectedAnswer = answers[currentQuestion];
+            const options = document.querySelectorAll('.option');
+
+            // Show correct/incorrect
+            options.forEach((opt, i) => {
+                if (i === question.correct) {
+                    opt.classList.add('correct');
+                } else if (i === selectedAnswer) {
+                    opt.classList.add('incorrect');
+                }
+                opt.style.pointerEvents = 'none';
+            });
+
+            // Show fact
+            document.getElementById('factBox').classList.add('show');
+
+            // Update score
+            if (selectedAnswer === question.correct) {
+                score++;
+            }
+
+            // Move to next question or show results
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < quizData.length) {
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            }, 3000);
+
+            document.getElementById('submitBtn').disabled = true;
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / quizData.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function showResults() {
+            document.getElementById('quizContent').style.display = 'none';
+            const resultDiv = document.getElementById('result');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const scoreMessage = document.getElementById('scoreMessage');
+
+            resultDiv.classList.add('show');
+            scoreDisplay.textContent = `${score}/${quizData.length}`;
+
+            const percentage = (score / quizData.length) * 100;
+
+            if (percentage >= 90) {
+                scoreDisplay.classList.add('excellent');
+                scoreMessage.textContent = "🏆 Excellent! You're a snake expert!";
+            } else if (percentage >= 70) {
+                scoreDisplay.classList.add('good');
+                scoreMessage.textContent = "👍 Great job! You know your snakes!";
+            } else if (percentage >= 50) {
+                scoreDisplay.classList.add('fair');
+                scoreMessage.textContent = "📚 Not bad! Keep learning!";
+            } else {
+                scoreDisplay.classList.add('poor');
+                scoreMessage.textContent = "📖 Study more about snakes!";
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            answers = [];
+            document.getElementById('quizContent').style.display = 'block';
+            document.getElementById('result').classList.remove('show');
+            loadQuestion();
+        }
+
+        // Start quiz on page load
+        window.onload = () => {
+            loadQuestion();
+        };
+    </script>
+</body>
+
+</html>

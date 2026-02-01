@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Snake Bite Prediction System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #10b981 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .nav a:hover {
+            background: rgba(16, 185, 129, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #10b981;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: #22c55e;
+            margin: 25px 0 15px 0;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tech-badge {
+            background: rgba(16, 185, 129, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #10b981;
+        }
+
+        ul {
+            margin-left: 30px;
+            line-height: 2;
+        }
+
+        .highlight {
+            background: rgba(16, 185, 129, 0.2);
+            padding: 20px;
+            border-left: 4px solid #10b981;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>ℹ️ About This Project</h1>
+            <div class="nav">
+                <a href="/">🏠 Home</a>
+                <a href="/species">📚 Species Info</a>
+                <a href="/safety">🚨 Safety Guide</a>
+                <a href="/about">ℹ️ About</a>
+            </div>
+        </header>
+
+        <div class="card">
+            <h2>🐍 Snake Bite Prediction System using Deep Learning</h2>
+            <p>
+                This project is an advanced AI-powered system designed to identify snake species from images
+                and determine whether they are venomous or harmless. Using state-of-the-art deep learning
+                techniques, the system can help in emergency situations by providing quick and accurate
+                snake identification.
+            </p>
+
+            <div class="highlight">
+                <strong>⚠️ Important Disclaimer:</strong> This system is designed as an educational and
+                assistive tool. It should NOT be used as the sole basis for medical decisions. Always seek
+                professional medical help in case of snake bites.
+            </div>
+
+            <h3>🎯 Project Objectives</h3>
+            <ul>
+                <li>Develop a high-accuracy deep learning model for snake species classification</li>
+                <li>Create an accessible web interface for easy public use</li>
+                <li>Provide instant safety information about snake species</li>
+                <li>Educate users about snake identification and safety protocols</li>
+                <li>Assist in emergency situations with quick species identification</li>
+            </ul>
+
+            <h3>✨ Key Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h4>AI-Powered Detection</h4>
+                    <p>Uses ResNet34 CNN architecture with 85%+ accuracy</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Real-time Analysis</h4>
+                    <p>Instant predictions in less than 1 second</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4>Confidence Scoring</h4>
+                    <p>Provides probability scores for predictions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h4>Educational Content</h4>
+                    <p>Detailed species information and safety guides</p>
+                </div>
+            </div>
+
+            <h3>🔬 Technical Architecture</h3>
+            <p>
+                <strong>Model:</strong> ResNet34 (Residual Neural Network with 34 layers)<br>
+                <strong>Framework:</strong> FastAI built on PyTorch<br>
+                <strong>Training Data:</strong> ~8,000 images across 4 snake species<br>
+                <strong>Accuracy:</strong> 85%+ on validation dataset<br>
+                <strong>Image Size:</strong> 224x224 pixels<br>
+                <strong>Transfer Learning:</strong> Pre-trained on ImageNet
+            </p>
+
+            <h3>🛠️ Technology Stack</h3>
+            <div class="tech-stack">
+                <span class="tech-badge">Python 3.8+</span>
+                <span class="tech-badge">FastAI 2.8+</span>
+                <span class="tech-badge">PyTorch</span>
+                <span class="tech-badge">Flask 3.1+</span>
+                <span class="tech-badge">HTML5/CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+            </div>
+
+            <h3>🐍 Supported Snake Species</h3>
+            <ul>
+                <li><strong>Northern Cottonmouth</strong> (Agkistrodon piscivorus) - Venomous</li>
+                <li><strong>Texas Coral Snake</strong> (Micrurus tener) - Highly Venomous</li>
+                <li><strong>Plain Bellied Water Snake</strong> (Nerodia erythrogaster) - Harmless</li>
+                <li><strong>Louisiana Milk Snake</strong> (Lampropeltis triangulum) - Harmless</li>
+            </ul>
+
+            <h3>📈 Model Training Process</h3>
+            <ol style="line-height: 2;">
+                <li><strong>Data Collection:</strong> Gathered ~2,000 images per species using web scraping</li>
+                <li><strong>Data Preprocessing:</strong> Resizing, normalization, and augmentation</li>
+                <li><strong>Transfer Learning:</strong> Fine-tuned ResNet34 pre-trained on ImageNet</li>
+                <li><strong>Training:</strong> 5 epochs with progressive learning rate reduction</li>
+                <li><strong>Validation:</strong> Achieved 85%+ accuracy on validation set</li>
+            </ol>
+
+            <h3>🎓 Use Cases</h3>
+            <ul>
+                <li><strong>Emergency Response:</strong> Quick identification in snake bite emergencies</li>
+                <li><strong>Wildlife Education:</strong> Learning tool for students and nature enthusiasts</li>
+                <li><strong>Field Research:</strong> Assisting herpetologists in species identification</li>
+                <li><strong>Public Safety:</strong> Helping people identify dangerous snakes</li>
+            </ul>
+
+            <h3>🚀 Future Enhancements</h3>
+            <ul>
+                <li>Expand to 20+ snake species</li>
+                <li>Mobile app development (iOS/Android)</li>
+                <li>Multi-language support</li>
+                <li>Real-time video analysis</li>
+                <li>GPS-based snake warnings</li>
+                <li>Integration with emergency services</li>
+            </ul>
+
+            <h3>👨‍💻 Developer</h3>
+            <p>
+                <strong>Name:</strong> Vikramkumar<br>
+                <strong>GitHub:</strong> @Vikramkumarx<br>
+                <strong>Project:</strong> Snake Bite Prediction System using Deep Learning<br>
+                <strong>Year:</strong> 2026
+            </p>
+
+            <div class="highlight">
+                <strong>📞 Emergency Numbers:</strong><br>
+                • Emergency Services: 911<br>
+                • Poison Control: 1-800-222-1222<br>
+                • Always seek immediate medical attention for snake bites!
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

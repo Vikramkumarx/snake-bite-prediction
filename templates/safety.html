@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Guidelines | Snake Bite Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .nav a:hover {
+            background: rgba(239, 68, 68, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #ef4444;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: #f87171;
+            margin: 25px 0 15px 0;
+        }
+
+        .emergency-box {
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid #ef4444;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .emergency-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ef4444;
+            margin: 15px 0;
+        }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .do-dont-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .do-card {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .dont-card {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid #ef4444;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        ul {
+            margin-left: 25px;
+            line-height: 2.2;
+        }
+
+        .step-card {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .warning-box {
+            background: rgba(251, 191, 36, 0.1);
+            border: 2px solid #fbbf24;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚨 Snake Safety Guidelines</h1>
+            <div class="nav">
+                <a href="/">🏠 Home</a>
+                <a href="/species">📚 Species Info</a>
+                <a href="/safety">🚨 Safety Guide</a>
+                <a href="/about">ℹ️ About</a>
+            </div>
+        </header>
+
+        <div class="emergency-box">
+            <h2 style="color: white; margin-bottom: 10px;">⚠️ EMERGENCY</h2>
+            <p style="font-size: 1.2rem; color: #fca5a5;">If bitten by a snake, call immediately:</p>
+            <div class="emergency-number">911</div>
+            <p style="color: #cbd5e1;">Poison Control: 1-800-222-1222</p>
+        </div>
+
+        <div class="card">
+            <h2>🐍 Do's and Don'ts When Encountering Snakes</h2>
+
+            <div class="do-dont-grid">
+                <div class="do-card">
+                    <h3 style="color: #10b981;"><span class="icon">✅</span>DO's</h3>
+                    <ul>
+                        <li>Keep a safe distance (at least 6 feet)</li>
+                        <li>Stay calm and move slowly away</li>
+                        <li>Watch where you step in snake habitat</li>
+                        <li>Wear boots and long pants in snake areas</li>
+                        <li>Use a flashlight at night</li>
+                        <li>Keep your yard clean and trimmed</li>
+                        <li>Educate yourself about local snakes</li>
+                        <li>Take a photo from a safe distance</li>
+                    </ul>
+                </div>
+
+                <div class="dont-card">
+                    <h3 style="color: #ef4444;"><span class="icon">❌</span>DON'Ts</h3>
+                    <ul>
+                        <li>Don't try to catch or kill the snake</li>
+                        <li>Don't provoke or corner the snake</li>
+                        <li>Don't put your hands in holes or crevices</li>
+                        <li>Don't step over logs without checking</li>
+                        <li>Don't handle dead snakes (can still bite)</li>
+                        <li>Don't assume a snake is harmless</li>
+                        <li>Don't panic or make sudden movements</li>
+                        <li>Don't try to identify by getting close</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚑 First Aid for Snake Bites</h2>
+
+            <div class="warning-box">
+                <strong><span class="icon">⚠️</span>IMPORTANT:</strong> These are general guidelines.
+                Always seek immediate professional medical help for any snake bite!
+            </div>
+
+            <h3>Immediate Steps:</h3>
+
+            <div class="step-card">
+                <strong>1. Call Emergency Services (911)</strong>
+                <p>Time is critical. Call for help immediately, even if you're not sure if the snake was venomous.</p>
+            </div>
+
+            <div class="step-card">
+                <strong>2. Keep the Victim Calm</strong>
+                <p>Panic increases heart rate and spreads venom faster. Keep the person still and reassured.</p>
+            </div>
+
+            <div class="step-card">
+                <strong>3. Position the Victim</strong>
+                <p>Keep the bitten area below heart level if possible. Have the person lie down.</p>
+            </div>
+
+            <div class="step-card">
+                <strong>4. Remove Tight Items</strong>
+                <p>Take off rings, watches, tight clothing near the bite before swelling starts.</p>
+            </div>
+
+            <div class="step-card">
+                <strong>5. Clean the Wound</strong>
+                <p>Gently wash with soap and water if available. Cover with a clean, dry dressing.</p>
+            </div>
+
+            <div class="step-card">
+                <strong>6. Immobilize the Limb</strong>
+                <p>Use a splint to keep the bitten limb still. Minimize movement.</p>
+            </div>
+
+            <div class="step-card">
+                <strong>7. Note the Time</strong>
+                <p>Record when the bite occurred. This helps medical professionals.</p>
+            </div>
+
+            <div class="step-card">
+                <strong>8. Identify the Snake (Safely)</strong>
+                <p>Take a photo from a safe distance or note its appearance. Don't try to catch it!</p>
+            </div>
+
+            <h3 style="color: #ef4444; margin-top: 30px;">❌ What NOT to Do:</h3>
+            <div class="dont-card">
+                <ul>
+                    <li><strong>DON'T</strong> apply ice or cold packs</li>
+                    <li><strong>DON'T</strong> use a tourniquet</li>
+                    <li><strong>DON'T</strong> cut the wound</li>
+                    <li><strong>DON'T</strong> try to suck out the venom</li>
+                    <li><strong>DON'T</strong> apply electric shock</li>
+                    <li><strong>DON'T</strong> give the victim alcohol or caffeine</li>
+                    <li><strong>DON'T</strong> let the victim walk or run</li>
+                    <li><strong>DON'T</strong> wait to see if symptoms develop</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔍 Snake Identification Tips</h2>
+
+            <h3>Visual Characteristics to Note:</h3>
+            <ul>
+                <li><strong>Head Shape:</strong> Triangular (venomous) vs. Rounded (often harmless)</li>
+                <li><strong>Eyes:</strong> Elliptical pupils (venomous) vs. Round pupils (harmless)</li>
+                <li><strong>Color Patterns:</strong> Bands, stripes, or solid colors</li>
+                <li><strong>Size:</strong> Length and thickness of the snake</li>
+                <li><strong>Tail:</strong> Rattles (rattlesnakes) or smooth</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong><span class="icon">⚠️</span>Remember:</strong> These are general guidelines.
+                Some harmless snakes mimic venomous ones. Never rely solely on these features.
+                When in doubt, treat all snakes as potentially dangerous!
+            </div>
+
+            <h3>Common Venomous Snake Patterns in North America:</h3>
+            <ul>
+                <li><strong>Coral Snakes:</strong> "Red on yellow, kill a fellow; Red on black, friend of Jack"</li>
+                <li><strong>Pit Vipers:</strong> Triangular heads, heat-sensing pits between eyes and nostrils</li>
+                <li><strong>Rattlesnakes:</strong> Distinctive rattle at the end of tail</li>
+                <li><strong>Cottonmouths:</strong> White mouth interior, semi-aquatic</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🏡 Preventing Snake Encounters</h2>
+
+            <h3>Around Your Home:</h3>
+            <ul>
+                <li>Keep grass short and remove brush piles</li>
+                <li>Seal cracks and gaps in foundations</li>
+                <li>Remove rodent food sources (birdseed, pet food)</li>
+                <li>Store firewood away from the house</li>
+                <li>Install snake-proof fencing if needed</li>
+                <li>Keep garage doors closed</li>
+                <li>Remove standing water</li>
+            </ul>
+
+            <h3>While Hiking or Outdoors:</h3>
+            <ul>
+                <li>Stay on designated trails</li>
+                <li>Wear sturdy boots and long pants</li>
+                <li>Use a walking stick to probe ahead</li>
+                <li>Watch where you sit or place your hands</li>
+                <li>Be extra cautious near water and rocks</li>
+                <li>Avoid hiking at dawn, dusk, or night</li>
+                <li>Make noise while walking to alert snakes</li>
+            </ul>
+        </div>
+
+        <div class="emergency-box">
+            <h3 style="color: white;">📱 Save These Numbers</h3>
+            <p style="margin: 15px 0; line-height: 2;">
+                <strong>Emergency Services:</strong> 911<br>
+                <strong>Poison Control:</strong> 1-800-222-1222<br>
+                <strong>Local Hospital Emergency:</strong> [Add your local number]
+            </p>
+            <p style="color: #fca5a5; margin-top: 20px;">
+                ⚠️ In case of snake bite, every minute counts. Don't hesitate to call for help!
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

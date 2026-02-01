@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Species Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #10b981 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .nav a:hover {
+            background: rgba(16, 185, 129, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .species-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .species-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .species-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 5px solid;
+            transition: transform 0.3s;
+        }
+
+        .species-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .species-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+        }
+
+        .species-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .scientific-name {
+            font-style: italic;
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .badge-venomous {
+            background: #ef4444;
+            color: white;
+        }
+
+        .badge-harmless {
+            background: #10b981;
+            color: white;
+        }
+
+        .info-section {
+            margin: 20px 0;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #10b981;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .info-content {
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .danger-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid #ef4444;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .safe-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .legend {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .legend-items {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Snake Species Information</h1>
+            <p style="color: #94a3b8; margin-top: 10px;">Learn about the snake species our AI can identify</p>
+            <div class="nav">
+                <a href="/">🏠 Home</a>
+                <a href="/species">📚 Species Info</a>
+                <a href="/safety">🚨 Safety Guide</a>
+                <a href="/about">ℹ️ About</a>
+            </div>
+        </header>
+
+        <div class="legend">
+            <h3 style="color: #10b981; margin-bottom: 15px;">Classification Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="color-box" style="background: #ef4444;"></div>
+                    <span>Venomous - High Risk</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #dc2626;"></div>
+                    <span>Highly Venomous - Extreme Risk</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background: #10b981;"></div>
+                    <span>Harmless - Low Risk</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="species-grid">
+            {% for name, info in snakes.items() %}
+            <div class="species-card" style="border-left-color: {{ info.color }}">
+                <div class="species-header">
+                    <div>
+                        <div class="species-name" style="color: {{ info.color }}">
+                            {{ name }}
+                        </div>
+                        <div class="scientific-name">{{ info.scientific_name }}</div>
+                    </div>
+                    {% if info.venomous %}
+                    <span class="badge badge-venomous">⚠️ VENOMOUS</span>
+                    {% else %}
+                    <span class="badge badge-harmless">✅ HARMLESS</span>
+                    {% endif %}
+                </div>
+
+                <div class="info-section">
+                    <div class="info-label">📝 Description</div>
+                    <div class="info-content">{{ info.description }}</div>
+                </div>
+
+                <div class="info-section">
+                    <div class="info-label">🌍 Habitat</div>
+                    <div class="info-content">{{ info.habitat }}</div>
+                </div>
+
+                <div class="info-section">
+                    <div class="info-label">⚠️ Danger Level</div>
+                    <div class="info-content">
+                        <strong style="color: {{ info.color }}">{{ info.danger_level }}</strong>
+                    </div>
+                </div>
+
+                {% if info.venomous %}
+                <div class="danger-box">
+                    <div class="info-label" style="color: #ef4444;">🚑 First Aid</div>
+                    <div class="info-content">{{ info.first_aid }}</div>
+                </div>
+                {% else %}
+                <div class="safe-box">
+                    <div class="info-label" style="color: #10b981;">ℹ️ Safety Note</div>
+                    <div class="info-content">{{ info.first_aid }}</div>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 30px; text-align: center;">
+            <h2 style="color: #10b981; margin-bottom: 15px;">🔍 How to Use This Information</h2>
+            <p style="color: #cbd5e1; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                This information is provided for educational purposes to help you understand the snake species
+                our AI system can identify. If you encounter a snake in the wild, maintain a safe distance
+                and use our AI system to identify it from a photo. Never attempt to handle or get close to
+                any snake, even if you believe it to be harmless.
+            </p>
+            <div
+                style="margin-top: 25px; padding: 20px; background: rgba(239, 68, 68, 0.1); border-radius: 10px; border: 2px solid #ef4444;">
+                <strong style="color: #ef4444;">⚠️ IMPORTANT:</strong>
+                <p style="color: #fca5a5; margin-top: 10px;">
+                    In case of a snake bite, call 911 immediately. Do not wait to identify the species.
+                    Time is critical in snake bite emergencies!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
